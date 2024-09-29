@@ -1,33 +1,30 @@
-#include <iostream>
-#include <vector>
+// VecinoMasCercano.cpp
+#include "VecinoMasCercano.h"
 #include <limits>
-#include "Grafo.h"
+#include <omp.h>
 
-class VecinoMasCercano {
-private:
-    const Grafo& grafo;
+// Constructor que recibe el grafo como referencia
+VecinoMasCercano::VecinoMasCercano(const Grafo& g) : grafo(g) {}
 
-public:
-    // Constructor que recibe el grafo como referencia
-    VecinoMasCercano(const Grafo& g) : grafo(g) {}
+// Método que implementa el algoritmo del vecino más cercano con dos nodos de inicio
+std::pair<std::vector<int>, std::vector<int>> VecinoMasCercano::resolver(int inicio1, int inicio2) {
+    std::vector<int> ruta1, ruta2;
+    std::vector<bool> visitado(grafo.size(), false); // Vector para rastrear nodos visitados
 
-    // Método que implementa el algoritmo del vecino más cercano con dos nodos de inicio
-    std::pair<std::vector<int>, std::vector<int>> resolver(int inicio1, int inicio2) {
-        std::vector<int> ruta1, ruta2;
-        std::vector<bool> visitado(grafo.size(), false); // Vector para rastrear nodos visitados
+    int actual1 = inicio1; // Comienza en el primer nodo inicial
+    int actual2 = inicio2; // Comienza en el segundo nodo inicial
+    ruta1.push_back(actual1); // Añadir el primer nodo inicial a la primera ruta
+    ruta2.push_back(actual2); // Añadir el segundo nodo inicial a la segunda ruta
+    visitado[actual1] = true; // Marcar el primer nodo inicial como visitado
+    visitado[actual2] = true; // Marcar el segundo nodo inicial como visitado
 
-        int actual1 = inicio1; // Comienza en el primer nodo inicial
-        int actual2 = inicio2; // Comienza en el segundo nodo inicial
-        ruta1.push_back(actual1); // Añadir el primer nodo inicial a la primera ruta
-        ruta2.push_back(actual2); // Añadir el segundo nodo inicial a la segunda ruta
-        visitado[actual1] = true; // Marcar el primer nodo inicial como visitado
-        visitado[actual2] = true; // Marcar el segundo nodo inicial como visitado
-
-        // Bucle hasta visitar todos los nodos
-        for (size_t i = 2; i < grafo.size(); ++i) {
-            // Encuentra el vecino más cercano no visitado para el primer viajero
-            int siguiente1 = -1;
-            double menorDistancia1 = std::numeric_limits<double>::infinity();
+    // Bucle hasta visitar todos los nodos
+    for (size_t i = 2; i < grafo.size(); ++i) {
+        // Encuentra el vecino más cercano no visitado para el primer viajero
+        int siguiente1 = -1;
+        double menorDistancia1 = std::numeric_limits<double>::infinity();
+        #pragma omp critical
+        {
             for (int j = 0; j < grafo.size(); ++j) {
                 if (!visitado[j]) {
                     double distancia = grafo.distancia(actual1, j);
@@ -64,8 +61,7 @@ public:
                 actual2 = siguiente2;
             }
         }
-
-        // Retornar las dos rutas completas
-        return {ruta1, ruta2};
     }
-};
+    // Retornar las dos rutas completas
+    return {ruta1, ruta2};
+}

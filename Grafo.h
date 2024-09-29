@@ -46,6 +46,8 @@ public:
 
     // Obtiene la lista de vértices del grafo
     std::vector<Vertice> obtenerVertices() const { return vertices; }
+
+    double distancia(int origen, int destino) const;
 };
 
 #endif // GRAFO_H

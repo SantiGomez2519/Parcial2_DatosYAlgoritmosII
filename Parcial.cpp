@@ -30,8 +30,9 @@ void Parcial::cargar(const std::vector<Vertice>& vertices) {
 // - Llamamos al método dijkstra() del grafo, comenzando desde el vértice 0.
 // - Esto calcula las rutas más cortas desde el primer establecimiento a todos los demás.
 // - Retornamos el resultado del algoritmo de Dijkstra (previos y distancias).
-std::pair<std::vector<int>, std::vector<double>> Parcial::run() {
-    return grafo.dijkstra(0);
+std::pair<std::vector<int>, std::vector<int>> Parcial::run() {
+    VecinoMasCercano vecinoMasCercano(grafo);
+    return vecinoMasCercano.resolver(0, 1);
 }
 
 // Imprime la estructura del grafo

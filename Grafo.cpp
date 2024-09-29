@@ -159,3 +159,12 @@ void Grafo::imprimirGrafo() const {
         std::cout << std::endl;
     }
 }
+
+double Grafo::distancia(int origen, int destino) const {
+    for (const auto& arista : adyacencia[origen]) {
+        if (arista.destino == destino) {
+            return arista.distancia;
+        }
+    }
+    return std::numeric_limits<double>::infinity(); // Retorna infinito si no hay conexión
+}
