@@ -1,18 +1,17 @@
 # Evaluación Parcial: Optimización de Rutas para D1 en Medellín
 
+## Integrantes del grupo
+- Santiago Gomez Ospina
+- Miguel Angel Ortiz Puerta
+- Lucas Higuita
+- Simón Isaza
 ## Introducción
 
-Este proyecto es una extensión del parcial de Estructuras de Datos y Algoritmos II, enfocado en la optimización logística para la cadena de tiendas D1 en Medellín. El objetivo es desarrollar un sistema eficiente para calcular las rutas más cortas entre los establecimientos D1, utilizando el algoritmo de Dijkstra.
+Este proyecto es una extensión del parcial de Estructuras de Datos y Algoritmos II, enfocado en la optimización logística para la cadena de tiendas D1 en Medellín. El objetivo era desarrollar un sistema eficiente para calcular las rutas más cortas entre los establecimientos D1, utilizando el algoritmo de Dijkstra. Para lograrlo, se implementó un método en el cuál, cada vértice (establecimiento del D1) en el grafo, está conectado con todos los otros vertices a tráves de aristas (distancia entre los establecimientos) y en conjunto con el algoritmo de dijkstra se logra recorrer cada grafo, tomando siempre tomando la ruta mas corta entre los vertices vecinos y asegurandose de no visitar dos veces el mismo vértice.
 
-Este README proporciona una guía detallada sobre cómo abordar y completar el proyecto, basándose en el parcial inicial.
+## Contexto del problema
 
-**Importante:** Para acceder al documento original del parcial y obtener todos los detalles del reto, por favor visita el siguiente enlace:
-
-[Parcial Inicial - Reto de Optimización Logística para D1 en Medellín](https://docs.google.com/document/d/16PKcjlLMXQUEqgT_0NR51QjZcuh5b200DqRU9KZ04Hs/edit?usp=sharing)
-
-## Contexto del Parcial Original
-
-El escenario planteado en el parcial inicial es el siguiente:
+El escenario planteado inicial es el siguiente:
 
 - D1 cuenta con más de 10 locales comerciales distribuidos en Medellín.
 - Existen dos bodegas estratégicamente ubicadas: una en la zona norte y otra en la zona sur de la ciudad.
@@ -20,7 +19,7 @@ El escenario planteado en el parcial inicial es el siguiente:
 
 El desafío original consistía en desarrollar un programa en C++ para determinar las dos rutas más cortas y eficientes para que los camiones abastezcan todos los locales, visitando cada uno una única vez.
 
-## Extensión del Parcial
+## Extensión del problema
 
 En esta versión extendida del proyecto, hemos ampliado el alcance para incluir:
 
