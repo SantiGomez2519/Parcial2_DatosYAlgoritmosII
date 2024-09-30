@@ -4,10 +4,9 @@
 - Santiago Gomez Ospina
 - Miguel Angel Ortiz Puerta
 - Lucas Higuita
-- Simón Isaza
 ## Introducción
 
-Este proyecto es una extensión del parcial de Estructuras de Datos y Algoritmos II, enfocado en la optimización logística para la cadena de tiendas D1 en Medellín. El objetivo era desarrollar un sistema eficiente para calcular las rutas más cortas entre los establecimientos D1, utilizando el algoritmo de Dijkstra. Para lograrlo, se implementó un método en el cuál, cada vértice (establecimiento del D1) en el grafo, está conectado con todos los otros vertices a tráves de aristas (distancia entre los establecimientos) y en conjunto con el algoritmo de dijkstra se logra recorrer cada grafo, tomando siempre tomando la ruta mas corta entre los vertices vecinos y asegurandose de no visitar dos veces el mismo vértice.
+Este proyecto es una extensión del parcial de Estructuras de Datos y Algoritmos II, enfocado en la optimización logística para la cadena de tiendas D1 en Medellín. El objetivo era desarrollar un sistema eficiente para calcular las rutas más cortas entre los establecimientos D1, utilizando el algoritmo de Dijkstra. Para lograrlo, se implementó un método en el cuál, cada vértice (establecimiento del D1) en el grafo, está conectado con todos los otros vertices a tráves de aristas (distancia entre los establecimientos) y en conjunto con el algoritmo de dijkstra se logra recorrer cada grafo, tomando siempre la ruta mas corta entre los vertices vecinos y asegurandose de no visitar dos veces el mismo vértice.
 
 ## Contexto del problema
 
