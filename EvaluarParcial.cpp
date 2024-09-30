@@ -14,6 +14,18 @@ public:
         Parcial parcial;
 
         // Datos de ejemplo (coordenadas aproximadas de algunos barrios de Medellín)
+        // std::vector<Vertice> vertices = {
+        //     {"D1 norte", 5, 10},
+        //     {"D1 sur", 5, 0},
+        //     {"C",3, 6},
+        //     {"D",7, 6},
+        //     {"E",5, 4},
+        //     {"F",2, 2},
+        //     {"G",8, 2},
+        //     {"H",5, 8},
+        //     {"I",1, 8}
+        // };
+
         std::vector<Vertice> vertices = {
             {"Bodega Sur", 6.20000, -75.57000},
             {"Bodega Norte", 6.30000, -75.57000},
@@ -36,7 +48,7 @@ public:
             {"D1 San Diego", 6.239757524435364, -75.56793218132314},
             {"D1 Unicentro", 6.241380025216626, -75.58602416890596},
             {"D1 Belén Rincón", 6.213806578967952, -75.60176056520928},
-            {"D1 Guayabal", 6.202236924156238, -75.58559460657207},
+            {"D1 Guayabas", 6.202236924156238, -75.58559460657207},
             {"D1 Exposiciones", 6.238446500715659, -75.57350886717384},
             {"D1 La 65", 6.246080619829119, -75.58399445198604},
             {"D1 Colombia", 6.257507431810545, -75.5829787918462},
@@ -46,6 +58,8 @@ public:
 
         // Cargar datos
         parcial.cargar(vertices);
+
+        // parcial.imprimirGrafo();
 
         // Medir tiempo de ejecución de run()
         auto inicio = std::chrono::high_resolution_clock::now();
@@ -90,7 +104,7 @@ public:
             distanciaTotal += parcial.distancia(ruta2[i], ruta2[i + 1]);
         }
 
-        std::cout << "La distancia total es: " << distanciaTotal << "km" << std::endl;
+        std::cout << "\nLa distancia total es: " << distanciaTotal << "km" << std::endl;
     }
 };
 
