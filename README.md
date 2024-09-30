@@ -96,7 +96,15 @@ int main() {
    ```
    ./run
    ```
+## Compilación y Ejecución en Windows
 
+1. Abrir la terminal y dirigirse a la dirección del archivo
+2. Para compilar ejecutar:
+   ```
+     g++ EvaluarParcial.cpp Parcial.cpp VecinoMasCercano.cpp Grafo.cpp -o evaluador -O3 -ftree-vectorize -fopenmp -mavx2
+3. Para Ejecutar:
+   ```
+   ./evaluador
 ## Criterios de Evaluación
 
 Tu implementación será evaluada basándose en los siguientes criterios:
