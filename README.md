@@ -49,9 +49,9 @@ El enfoque adoptado es una aproximación "greedy" o codiciosa, donde en cada pas
 - Paralelización: OpenMP mejora el rendimiento del algoritmo en sistemas con múltiples núcleos. Aunque no se paralelizan todos los aspectos del código, la sección crítica que determina los vecinos más cercanos se maneja de manera eficiente.
 
 ## Optimización Implementada y Posibles Mejoras
-* Optimización con OpenMP: Se ha implementado una optimización básica con OpenMP para manejar las secciones críticas donde ambos viajeros seleccionan los nodos más cercanos. Aunque esto introduce un ligero costo adicional por la sincronización, reduce los tiempos de ejecución en comparación con una versión completamente secuencial.
+1. Optimización con OpenMP: Se ha implementado una optimización básica con OpenMP para manejar las secciones críticas donde ambos viajeros seleccionan los nodos más cercanos. Aunque esto introduce un ligero costo adicional por la sincronización, reduce los tiempos de ejecución en comparación con una versión completamente secuencial.
 
-* Posibles optimizaciones adicionales:
+2. Posibles optimizaciones adicionales:
 
 - Uso de Heurísticas Avanzadas: Implementar algoritmos más avanzados como Algoritmo Genético, Simulated Annealing o Búsqueda Tabú podría llevar a rutas más cercanas a la solución óptima.
 - División Inteligente del Grafo: Otra opción sería dividir inteligentemente el grafo entre los dos viajeros al principio, en lugar de usar una estrategia codiciosa, lo que reduciría la posibilidad de que los viajeros tomen decisiones subóptimas.
