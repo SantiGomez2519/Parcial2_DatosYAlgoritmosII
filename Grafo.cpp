@@ -160,6 +160,7 @@ void Grafo::imprimirGrafo() const {
     }
 }
 
+// Obtiene la distancia entre dos vértices
 double Grafo::distancia(int origen, int destino) const {
     for (const auto& arista : adyacencia[origen]) {
         if (arista.destino == destino) {

@@ -47,6 +47,7 @@ public:
     // Obtiene la lista de vértices del grafo
     std::vector<Vertice> obtenerVertices() const { return vertices; }
 
+    // Obtiene el peso de la arista entre dos vértices
     double distancia(int origen, int destino) const;
 };
 

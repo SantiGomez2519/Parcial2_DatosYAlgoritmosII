@@ -14,18 +14,6 @@ public:
         Parcial parcial;
 
         // Datos de ejemplo (coordenadas aproximadas de algunos barrios de Medellín)
-        // std::vector<Vertice> vertices = {
-        //     {"D1 norte", 5, 10},
-        //     {"D1 sur", 5, 0},
-        //     {"C",3, 6},
-        //     {"D",7, 6},
-        //     {"E",5, 4},
-        //     {"F",2, 2},
-        //     {"G",8, 2},
-        //     {"H",5, 8},
-        //     {"I",1, 8}
-        // };
-
         std::vector<Vertice> vertices = {
             {"Bodega Sur", 6.20000, -75.57000},
             {"Bodega Norte", 6.30000, -75.57000},

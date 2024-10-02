@@ -14,7 +14,7 @@ public:
     // Carga los vértices en el grafo
     void cargar(const std::vector<Vertice>& vertices);
 
-    // Ejecuta el algoritmo de Dijkstra en el grafo
+    // Ejecuta el algoritmo del Vecino más cercano en el grafo
     std::pair<std::vector<int>, std::vector<int>> run();
 
     // Imprime la estructura del grafo

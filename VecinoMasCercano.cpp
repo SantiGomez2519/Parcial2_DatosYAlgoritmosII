@@ -1,18 +1,18 @@
-// VecinoMasCercano.cpp
 #include "VecinoMasCercano.h"
 #include <limits>
-#include <omp.h>
+#include <omp.h> // Api para la paralelización del código
 
-// Constructor que recibe el grafo como referencia
+// Constructor que recibe el grafo
 VecinoMasCercano::VecinoMasCercano(const Grafo& g) : grafo(g) {}
 
 // Método que implementa el algoritmo del vecino más cercano con dos nodos de inicio
 std::pair<std::vector<int>, std::vector<int>> VecinoMasCercano::resolver(int inicio1, int inicio2) {
     std::vector<int> ruta1, ruta2;
-    std::vector<bool> visitado(grafo.size(), false); // Vector para rastrear nodos visitados
+    std::vector<bool> visitado(grafo.size(), false); // Vector para saber los nodos que ya fueron visitados
 
-    int actual1 = inicio1; // Comienza en el primer nodo inicial
-    int actual2 = inicio2; // Comienza en el segundo nodo inicial
+    int actual1 = inicio1;
+    int actual2 = inicio2;
+    
     ruta1.push_back(actual1); // Añadir el primer nodo inicial a la primera ruta
     ruta2.push_back(actual2); // Añadir el segundo nodo inicial a la segunda ruta
     visitado[actual1] = true; // Marcar el primer nodo inicial como visitado
